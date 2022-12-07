@@ -1,0 +1,47 @@
+using aws CloudFormation with Terraform! Deploying the CF yaml stack 
+
+In tf_cf_vpc.tf can adjust instance type, i.e. in parameters from t2.micro to t1.micro
+or can # out the InstanceType and use InstanceType in vpc.yaml
+
+error produced if #out for KeyName
+added vpcawstemp.yaml as a sample CF template for creating a VPC, to work I added line 10. #    Default: Devo and had to #out KeyeName and InstanceType plus change reference  template_body = file("vpcawstemp.yaml")
+simply use terrafrom init
+---------------------------
+to see in Flowchart use gitbash / bash use commands:
+terraform plan -out=plan.out
+terraform show -json plan.out > plan.json
+then upload here: https://hieven.github.io/terraform-visual/
+
+https://github.com/hieven/terraform-visual
+
+----------------
+To create FLOWCHART using terraform:
+see https://developer.hashicorp.com/terraform/cli/commands/graph
+followed yt https://www.youtube.com/watch?v=JVFn1IgZLY0
+
+1. install graphviz as admin
+    choco install graphviz
+2. on command use: 
+terraform graph | dot -Tsvg > graph.svg
+terraform graph -type=plan-destroy | dot -Tsvg > graph1.svg
+
+
+TO LIST RESOURCES USING AWS CLI:
+aws resourcegroupstaggingapi get-resources --region=us-east-1 --tags-per-page 100
+aws resourcegroupstaggingapi get-resources --tags-per-page 100
+aws resourcegroupstaggingapi get-resources --tag-filters Key=Environment,Values=Production --tags-per-page 100
+aws resourcegroupstaggingapi get-resources --region eu-west-1 --output json
+
+use this to inspect - carefully -- aws resourcegroupstaggingapi get-resources --region eu-west-1 --output json
+
+To NUKE:
+steps taken in mini pc - personal
+in home/tradexy
+using ubuntu wsl2
+follow steps https://github.com/gruntwork-io/cloud-nuke
+after nuking all, everything is destroyed, log back into console using root account.
+prodivde admin access to previously created user account (i.e. tradexydev), provide console access and re-set password (note, can use previous password).
+On cli, will need to do:
+aws configure
+then create and provide new AWS Access Key and AWS Secret Key (and i.e. us-east-1 and json as per usual)
+p.s. Installation git cloned in this folder no needed as part of the steps - as just needed the 1 file.

@@ -1,0 +1,7 @@
+{
+    "orgName": "amzn",
+    "appName": "lz-eks-lb",
+    "attribute": "01",
+    "envType": "dev",
+    "region": "us-east-1"
+}

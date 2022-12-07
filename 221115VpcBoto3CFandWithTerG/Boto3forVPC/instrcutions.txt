@@ -1,0 +1,10 @@
+As per https://aws.plainenglish.io/creating-vpc-using-boto3-terraform-cloudformation-and-both-af741a8afb3c
+
+to create: 
+python vpc.py
+
+destroy:
+python vpc_destroy.py --vpc_id vpc-076b..VPN.ID --region us-east-1 --services
+
+you may need to destroy key
+aws ec2 delete-key-pair --key-name ec2-keypair

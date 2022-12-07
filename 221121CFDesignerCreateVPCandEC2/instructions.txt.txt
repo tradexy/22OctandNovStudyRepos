@@ -1,0 +1,13 @@
+created using CloudFormation Designer
+
+221121cfDesignerVPCgood
+followed YT https://www.youtube.com/watch?v=I_ryIRJRT2U
+
+
+221121cfDesignerEC2good
+followed YT https://www.youtube.com/watch?v=LzQGjibsuN0
+note the sbove creates 2 instances, can easily create more.
+
+
+create CF stack (just add name) and delete stack
+

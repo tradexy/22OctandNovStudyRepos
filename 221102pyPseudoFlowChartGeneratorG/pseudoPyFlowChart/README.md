@@ -1,0 +1,141 @@
+# pseudoPyFlowChart
+Create chart using pseudo code python based!
+<img src="flowchart.png" width="629" height="500">
+## Notes to update and use.
+
+Compare to https://app.code2flow.com/manage/flowcharts
+
+These notes are to be used to implement per Mugilan and maybe used and developed to incorporate into a second flowchart generator in C#
+
+## Installing through Repl.it
+
+If you don't want to download this or setup python, you can run this project directly from your browser with [repl.it](https://replit.com/@tradexy/Flowchart-Generator)
+
+This link will automatically clone the project and set it up for you. If you want to do it manually, you can import **https://github.com/tradexy/pseudoPyFlowChart** into repl.it yourself.
+
+From here onwards, you can edit the enter.txt file in the repl project and replace it with your own custom pseudocode.
+
+Once you are done, you can run the commands from the [CLI Usage](#cli-usage) section of the README in the repl.it terminal.
+
+## Local Installation
+
+This project was built on Python 3.7.4
+
+Run this to install the necessary dependencies:
+
+```sh 
+pip install Pillow click
+```
+
+Next, clone this project onto your system.
+
+## Writing the Pseudocode
+
+The Pseudocode is entered into a .txt file. It follows strict rules which must be obeyed
+
+### Rules
+
+STOP and START are automatically input by the program, so do not need to be added
+
+Indents don't affect the program, so nothing has to be indented, and incorrect indentation is allowed
+
+The capitalization of the keywords is extremely important. If an error occurs, double check if you have capitalized the keywords like "TO" and "FOR" properly
+
+ELSE IF is not available, but nested IFs are possible
+
+The ENDIF, NEXT var, and ENDWHILE blocks are mandatory
+
+### Syntax Guide
+
+ #### Input and Output:
+
+  - INPUT x 
+  - OUTPUT x
+
+   ```sh
+   INPUT X
+   OUTPUT var
+   OUTPUT "hello"
+   ```
+#### IF statements:
+  - IF condition THEN
+  - ELSE
+  - ENDIF
+  
+  ```sh
+  IF x < 3 THEN
+    OUTPUT X
+  ELSE
+    OUTPUT x*2
+  ENDIF
+  ```
+  The else statement is optional (ENDIF is still necessary)
+  
+   ```sh
+  IF x < 3 THEN
+    OUTPUT X
+  ENDIF
+  ```
+  
+  #### Process-type blocks:
+
+  ```sh
+  x = x + 1
+  y = x / 2
+  ```
+  
+  #### While loops:
+
+  - WHILE condition DO
+  - ENDWHILE
+  
+  ```sh
+  WHILE x < 5 DO
+    OUTPUT x
+  ENDWHILE
+  ```
+  #### For loops:
+   
+  - FOR var <- start TO end
+  - NEXT var
+  
+  ```sh
+  FOR i <- 1 TO 5
+    OUTPUT i
+  NEXT i
+  ```
+
+## CLI usage
+
+To run the code, simply execute the following command:
+```sh
+python Converter.py
+```
+
+### Arguments
+  
+  Arguments in the CLI are typed like so: ```--size=20``` or ```--code="enter.txt"```
+ 
+  - ```--size``` is the font size used. This controls the size of the entire flowchart as well. By default it is 20px
+  - ```--font``` is the font path. A default NotoSans font is used at "./fonts/", but can be changed for different OSs or fonts
+  - ```--output``` is the flowchart's image file. Default is "flowchart.png"
+  - ```--code``` is the file with the pseudocode. Defaults to "enter.txt"
+  - ```--help``` provides CLI help
+  
+  For example:
+  
+  ```sh
+  python Converter.py --code="code.txt" --size=30 --output="result.png"
+  ```
+
+### Flowchart Image
+
+This image contains the created flowchart which can be shared, printed, etc. Its size varies exactly on the size of the flowchart created, so it may even hit a resolution of 10k pixels! However if the generated flowchart is too big, then the image will be unopenable due to being too large. The user should be careful with flowchart sizes.
+
+## Support
+
+If you are having issues, please let me know. You can contact me at tradexy@gmail.com
+
+## Python to Pseudo convertor 
+Credit to Mugilan Ganesan 
+Use https://replit.com/@tradexy/CAIE-Python2Pseudocode to convert python to pseudo code. Need to optimise as only works on simple to medium python code, not complex.

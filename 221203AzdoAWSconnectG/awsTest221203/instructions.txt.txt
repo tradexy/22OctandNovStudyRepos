@@ -1,0 +1,31 @@
+github and s3
+example bucket redirect in properties http://agithubredirectweb221203.s3-website-us-east-1.amazonaws.com
+agithubredirectweb221203
+check this https://docs.aws.amazon.com/AmazonS3/latest/userguide/how-to-page-redirect.html
+on github you can have a website displayed such as https://tradexy.github.io/gardener/ from repo https://github.com/tradexy/gardener by using redirect
+simply create s3 bucket and redicrect to url - steps in s3, create bucket, make it available to the public, Static website hosting and redirect
+
+example using AWS CodePipeline http://agithubawscodepipelineweb221203.s3-website-us-east-1.amazonaws.com
+agithubawscodepipelineweb221203
+followed tutorial https://dev.to/aws-builders/automate-static-website-deployment-from-github-to-s3-using-aws-codepipeline-4omh
+
+
+
+--------------------------------------------
+1st
+refering to the below, might want to take it from here first
+https://dev.to/aws-builders/provisioning-infrastructure-on-aws-using-azure-devops-3g75
+then continue with aws tutorial 2nd
+
+2nd
+to continue: https://docs.aws.amazon.com/vsts/latest/userguide/tutorials.html
+using: https://dev.azure.com/devsre/awsTest221203/_settings/adminservices
+
+3rd
+to then look at this azure devops and aws https://medium.com/swlh/connect-azure-devops-to-aws-b89120599103
+
+4th, perhaps
+https://towardsdatascience.com/azure-devops-pipelines-with-aws-toolkit-and-docker-cd619ebce375
+
+5th, maybe...
+https://dev.to/aws-builders/provisioning-infrastructure-on-aws-using-azure-devops-3g75

@@ -1,0 +1,47 @@
+OUTPUT "are we insane?"
+INPUT ans
+IF ans = "yes" THEN
+	OUTPUT "correct"
+ELSE
+	OUTPUT "incorrect"
+ENDIF
+
+
+OUTPUT "Enter a number"
+INPUT x
+IF x % 2 == 0 THEN
+    OUTPUT "It is even"
+ELSE
+    OUTPUT "It is odd"
+ENDIF
+
+
+OUTPUT "Enter a number"
+INPUT x
+IF x % 2 == 0 THEN
+    OUTPUT "It is even"
+    IF x % 2 == 0 THEN
+        OUTPUT "It is even"
+    ELSE
+        OUTPUT "It is odd"
+        IF x % 2 == 0 THEN
+            OUTPUT "It is even"
+        ELSE
+            OUTPUT "It is odd"
+        ENDIF
+    ENDIF
+ELSE
+    OUTPUT "It is odd"
+ENDIF
+
+
+n = 0
+WHILE n < 10 DO
+    OUTPUT n
+    n - n + 1
+    IF n%2 == 0 THEN
+        OUTPUT n + " is even"
+    ELSE
+        OUTPUT n + " is odd"
+    ENDIF
+ENDWHILE

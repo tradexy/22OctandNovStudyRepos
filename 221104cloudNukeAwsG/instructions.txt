@@ -1,0 +1,32 @@
+steps taken in mini pc - personal and also in laptop work
+in home/tradexy
+using ubuntu wsl2
+follow steps https://github.com/gruntwork-io/cloud-nuke
+if you install brew in linux, then simply use:
+brew install cloud-nuke
+
+my suggestion is to use:
+cloud-nuke aws --exclude-resource-type iam onecli221105 global --exclude-resource-type iam tradexydev global --exclude-resource-type iam-group AllAccess global --exclude-resource-type iam-group endUsers global --dry-run
+check the dry run above - the 2 global users to keep and 2 iam-groups (good to keep)
+
+cloud-nuke aws --exclude-resource-type iam onecli221105 global --exclude-resource-type iam tradexydev global --exclude-resource-type iam-group AllAccess global --exclude-resource-type iam-group endUsers global
+then after nuke the defaults (i.e. default VPCs)
+cloud-nuke defaults-aws
+
+then in console look at AWS Resource Groups
+look for resources to delete and delete manually
+
+other options to use:
+cloud-nuke inspect-aws --region us-east-1
+cloud-nuke aws --region us-east-1 --region eu-west-1
+In AWS, to delete only the default resources, run cloud-nuke defaults-aws
+To exclude us: cloud-nuke aws --exclude-region ap-south-1 --exclude-region ap-south-2
+time constraints, older...: cloud-nuke aws --older-than 24h
+list resources: cloud-nuke aws --list-resource-types
+terminate specific resources: cloud-nuke aws --resource-type ec2 --resource-type ami
+exclude specific resources: cloud-nuke aws --exclude-resource-type s3 --exclude-resource-type ec2
+
+
+Best to keep the tradexydev and onecli221105 as these are used for loging and cli, because after nuking everything is then need to login using the root account /email
+again need to provide user (tradexydev) password and user access to console
+p.s. Installation git cloned in this folder no needed as part of the steps - as just needed the 1 file.

@@ -1,0 +1,6 @@
+// use https://replit.com/@tradexy/CAIE-Python2Pseudocode#MyPythonFile to covert py to pseudo 
+
+x<-"Python "
+y<-"is "
+z<-"awesome"
+OUTPUT x + y + z

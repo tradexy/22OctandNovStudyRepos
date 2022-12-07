@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<title>London Gardener</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style>
+body, html {
+height: 100%;
+font-family: "Inconsolata", sans-serif;
+}
+
+.bgimg {
+background-position: center;
+background-size: cover;
+background-image: url("https://images.unsplash.com/photo-1625469754778-42cc577d9e28?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2452&q=80");
+min-height: 75%;
+}
+
+.menu {
+display: none;
+}
+</style>
+<body>
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+<div class="w3-row w3-padding w3-black">
+<div class="w3-col s3">
+<a href="#" class="w3-button w3-block w3-black">Home</a>
+</div>
+<div class="w3-col s3">
+<a href="#about" class="w3-button w3-block w3-black">About Us</a>
+</div>
+<div class="w3-col s3">
+<a href="#menu" class="w3-button w3-block w3-black">Menu</a>
+</div>
+<div class="w3-col s3">
+<a href="#where" class="w3-button w3-block w3-black">Where</a>
+</div>
+</div>
+</div>
+
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+<div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+<span class="w3-tag">From £30 per visit</span>
+</div>
+<div class="w3-display-middle w3-center">
+<span class="w3-text-white" style="font-size:90px"><p>Great</p><p>Garden</p><p></p><p></p><p></p></span>
+</div>
+<div class="w3-display-bottomright w3-center w3-padding-large">
+<span class="w3-text-white">London, Zones 1-9</span>
+</div>
+</header>
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-grayscale w3-large">
+
+<!-- About Container -->
+<div class="w3-container" id="about">
+<div class="w3-content" style="max-width:700px">
+<h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Fantastic Gardnening Service in London.</span></h5>
+<p>Welcome to the Quality London Gardener – we are so pleased you have found us.</p>
+<p>Your garden might need some improvements and our gardeners will do their best efforts to get your garden in great condition.</p>
+<p>We have very special gardeners who are qualified to execute all sort of procedures for you and any other resident of London.</p>
+<p>In a short time, our gardeners can turn your garden into the beautiful and well-arranged place that you’ve always imagined.</p>
+<p></p>
+<p></p>
+<p>email, drop us a message using the form below or send us a text/WhatsApp msg on 07944336186</p>
+<p></p>
+<p></p>
+<p></p>
+<div class="w3-panel w3-leftbar w3-light-grey">
+<p><i>The love of gerdening is a seed</i></p>
+<p><i>Once sown that never dies.</i></p>
+<p><i>Gertrude Jekyll</i></p>
+<p><i></i></p>
+</div>
+<img src="https://images.unsplash.com/photo-1438109382753-8368e7e1e7cf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80" style="width:100%;max-width:1000px;margin-top:32px;">
+<p><strong>Available times:
+</strong>We can disuss availability to work to a schedule</p>
+<p><strong>
+</strong></p>
+<p><strong>
+</strong></p>
+<p><strong>
+</strong></p>
+<p><strong>
+</strong></p>
+</div>
+</div>
+
+<!-- Menu Container -->
+<div class="w3-container" id="menu">
+<div class="w3-content" style="max-width:700px">
+<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Examples of work</span></h5>
+<div class="w3-row w3-center w3-card w3-padding">
+<a href="javascript:void(0)" onclick="openMenu(event, 'Eat');" id="myLink">
+<div class="w3-col s6 tablink">Residential</div>
+</a>
+<a href="javascript:void(0)" onclick="openMenu(event, 'Drinks');">
+<div class="w3-col s6 tablink">Commercial</div>
+</a>
+</div>
+<div id="Eat" class="w3-container menu w3-padding-48 w3-card">
+<h5>Hedge Cutting</h5>
+<p class="w3-text-grey">Shrub & Tree Pruning</p>
+<h5>Regular Gardening Maintenance</h5>
+<p class="w3-text-grey">Tree & Hedge Planting</p>
+<h5>Turfing & Wildflower Meadows</h5>
+<p class="w3-text-grey">Gutter Cleaning</p>
+<h5>Hard Surface Cleaning</h5>
+<p class="w3-text-grey">Fence installation</p>
+<h5>Build Garden Structures</h5>
+<p class="w3-text-grey">Canopy Installation</p>
+<h5></h5>
+<p class="w3-text-grey"></p>
+<h5></h5>
+<p class="w3-text-grey"></p>
+<h5></h5>
+<p class="w3-text-grey"></p>
+<h5></h5>
+<p class="w3-text-grey"></p>
+<h5></h5>
+<p class="w3-text-grey"></p>
+</div>
+<div id="Drinks" class="w3-container menu w3-padding-48 w3-card">
+<h5>Clearing overgrown garden</h5>
+<p class="w3-text-grey">Groundskeeping</p>
+<h5>Garden Clearence</h5>
+<p class="w3-text-grey">Weeding & lawn care</p>
+<h5>Snow Clearances & Gritting</h5>
+<p class="w3-text-grey">Pond cleaning</p>
+<h5>Lawn Care Program</h5>
+<p class="w3-text-grey">Canopy Installation</p>
+<h5>Flowers and Planting</h5>
+<p class="w3-text-grey"></p>
+<h5></h5>
+<p class="w3-text-grey"></p>
+<h5></h5>
+<p class="w3-text-grey"></p>
+<h5></h5>
+<p class="w3-text-grey"></p>
+<h5></h5>
+<p class="w3-text-grey"></p>
+<h5></h5>
+<p class="w3-text-grey"></p>
+</div>
+<img src="https://images.unsplash.com/photo-1509567852316-09a353a7914a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80" style="width:100%;max-width:1000px;margin-top:32px;">
+</div>
+</div>
+
+<!-- Contact/Area Container -->
+<div class="w3-container" id="where" style="padding-bottom:32px;">
+<div class="w3-content" style="max-width:700px">
+<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Coverage Area</span></h5>
+<p>We cover all London Zones, from 1 to 9</p>
+<img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80*cdGm-_GkHlZAwG_L.jpg" class="w3-image" style="width:100%">
+<p><span class="w3-tag">Best service:
+</span>We are London's affordable gardening business that provide a full range of outdoor services for Residential and Commercial clients.</p>
+<p>Our range of services includes: maintenance, landscaping, patio cleaning, lawn care, commercial mowing, planting, seasonal clearance, and gutter cleaning services.</p>
+<p>Honesty is the only policy and we strive to complete all projects with integrity, not just with our clients.</p>
+<p>Being polite, working fast and efficient is the only way we know. We make friends, not customers!</p>
+<p></p>
+<p></p>
+<p>Fill the form or send us an email to: indexrandom@gmail.com</p>
+<form action="https://formsubmit.co/indexrandom@gmail.com" method="POST">
+<p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+<p><input class="w3-input w3-padding-16 w3-border" type="email" placeholder="email" required name="email"></p>
+<p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message / describe work required" required name="Message"></p>
+<p><input class="w3-input w3-padding-16 w3-border" type="hidden" placeholder="" required name="_next" value="https://gardeners.netlify.app/thanks/"></p>
+<p><input class="w3-input w3-padding-16 w3-border" type="hidden" placeholder="" required name="_captcha" value="false"></p>
+
+<!--
+FROM THIS YOUTUBE VIDEO WATCH https://www.youtube.com/watch?v=r4RQ38EoLds
+<p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="How many people" required name="People"></p>
+<p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date" required name="date" value="2021-11-16T20:00"></p>
+-->
+<p><button class="w3-button w3-black" type="submit">Send</button></p>
+</form>
+</div>
+</div>
+
+<!-- form2 from formsubmit.co
+<form action="https://formsubmit.co/indexrandom@gmail.com" method="POST">
+<input type="text" name="name" required>
+<input type="email" name="email" required>
+<button type="submit">Send</button>
+</form>
+-->
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+<p>Created by <a href="https://www.devdev.com" title="W3.CSS" target="_blank" class="w3-hover-text-green">DevDev</a></p>
+</footer>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+var i, x, tablinks;
+x = document.getElementsByClassName("menu");
+for (i = 0; i < x.length; i++) {
+x[i].style.display = "none";
+}
+tablinks = document.getElementsByClassName("tablink");
+for (i = 0; i < x.length; i++) {
+tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+}
+document.getElementById(menuName).style.display = "block";
+evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+
+</body>
+</html>

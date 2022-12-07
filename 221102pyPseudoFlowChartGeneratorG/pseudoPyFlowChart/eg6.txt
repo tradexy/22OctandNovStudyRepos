@@ -1,0 +1,28 @@
+x='*'
+z=' '
+b=0
+WHILE True DO
+    OUTPUT "Do you want diamond 1 or 0?"
+    INPUT d
+
+    b=0
+
+    OUTPUT "Enter the Line Number"
+    INPUT y
+
+    c=y+1
+
+     FOR i <- 0 TO y
+        OUTPUT ((y*z)+x=(b*x))
+        y -= 1
+        b +=2
+    NEXT i
+
+    IF d == 1 THEN
+        FOR j <- 0 TO c
+            OUTPUT ((y*z)+x+(b*x))
+            y += 1
+            b -=2
+        NEXT j
+    ENDIF
+ENDWHILE

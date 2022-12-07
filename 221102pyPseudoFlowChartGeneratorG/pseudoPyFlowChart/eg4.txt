@@ -1,0 +1,10 @@
+n = 0
+WHILE n < 10 DO
+    OUTPUT n
+    n - n + 1
+    IF n%2 == 0 THEN
+        OUTPUT n + " is even"
+    ELSE
+        OUTPUT n + " is odd"
+    ENDIF
+ENDWHILE

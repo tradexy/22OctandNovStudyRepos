@@ -1,0 +1,7 @@
+OUTPUT "Enter a number"
+INPUT x
+IF x % 2 == 0 THEN
+    OUTPUT "It is even"
+ELSE
+    OUTPUT "It is odd"
+ENDIF

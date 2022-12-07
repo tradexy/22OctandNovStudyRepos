@@ -1,0 +1,11 @@
+[{'Arn': 'arn:aws:iam::653194956263:user/onecli221105',
+  'CreateDate': datetime.datetime(2022, 11, 5, 12, 50, 3, tzinfo=tzutc()),
+  'Path': '/',
+  'UserId': 'AIDAZQFLUBXT6BIRL34AY',
+  'UserName': 'onecli221105'},
+ {'Arn': 'arn:aws:iam::653194956263:user/tradexydev',
+  'CreateDate': datetime.datetime(2022, 9, 8, 11, 42, 11, tzinfo=tzutc()),
+  'PasswordLastUsed': datetime.datetime(2022, 11, 12, 14, 6, 35, tzinfo=tzutc()),
+  'Path': '/',
+  'UserId': 'AIDAZQFLUBXT7DSRQADLI',
+  'UserName': 'tradexydev'}]

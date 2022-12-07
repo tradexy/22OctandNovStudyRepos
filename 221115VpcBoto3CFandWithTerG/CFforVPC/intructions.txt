@@ -1,0 +1,8 @@
+create key-pair: aws ec2 create-key-pair --key-name ec2-keypair
+
+use:
+aws cloudformation create-stack --stack-name cfvpc --template-body file://vpc.yaml 
+
+followed guide, note thst it mistakes the use line above: (above line is correct)
+
+delete created resources with: aws cloudformation delete-stack --stack-name cfvpc

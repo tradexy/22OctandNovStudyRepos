@@ -1,0 +1,7 @@
+x <- 0
+OUTPUT x
+IF x > 3 THEN
+    OUTPUT x
+ELSE
+    OUTPUT "ok"
+ENDIF

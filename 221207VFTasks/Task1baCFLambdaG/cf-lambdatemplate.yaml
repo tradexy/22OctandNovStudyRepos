@@ -1,0 +1,139 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: A stack for deploying a simple lambda function displaying a welcome message
+Parameters:
+    ModuleName:
+        Type: String
+        Default: "index"
+    RegionList:
+        Type: String 
+        Default: "eu-west-2a"
+
+Resources:
+    # VPC.
+    # It has two public subnets, and two private subnets.
+    # We distribute the subnets across the first two available subnets
+    # for the region, for high availability.
+    InstanceSecurityGroup:
+        Type: AWS::EC2::SecurityGroup
+        Properties:
+            GroupDescription: Lambda security group VF
+            VpcId: !Ref 'VPC'
+            SecurityGroupIngress:
+            - IpProtocol: tcp
+              FromPort: 80
+              ToPort: 80
+              CidrIp: 0.0.0.0/0
+            SecurityGroupEgress:
+            - IpProtocol: tcp
+              FromPort: 80
+              ToPort: 80
+              CidrIp: 0.0.0.0/0
+
+    CommonPrivateSubnetSsm:
+        Type: "AWS::SSM::Parameter"
+        Properties:
+            Name: "privatesubnet1cidr"
+            Type: String
+            Value: "10.14.20.0/28"
+            Description: "Private subnet range for the VF test CF project in the test environment"
+    
+    SecurityGroupLambda:
+        Type: "AWS::SSM::Parameter"
+        Properties:
+            Name: "securitygrouplambda"
+            Type: String
+            Value: { "Fn::GetAtt" : ["InstanceSecurityGroup", "GroupId"] }
+            Description: "Empty SG to test"
+
+    VPC:
+        Type: AWS::EC2::VPC
+        Properties:
+            EnableDnsSupport: true
+            EnableDnsHostnames: true
+            CidrBlock: '10.14.0.0/19'
+            Tags:
+            - Key: Name
+              Value: test-vpc-vf
+        DeletionPolicy: Delete
+
+    # Two public subnets, where containers can have public IP addresses
+    PublicSubnetOne:
+        Type: AWS::EC2::Subnet
+        Properties:
+            AvailabilityZone: !Ref RegionList
+            VpcId: !Ref 'VPC'
+            CidrBlock: '10.14.10.0/28'
+            Tags:
+            - Key: Name
+              Value: test-public-subnet1-vf
+        DeletionPolicy: Delete
+
+    # Two private subnets
+    PrivateSubnetOne:
+        Type: AWS::EC2::Subnet
+        Properties:
+            AvailabilityZone: !Ref RegionList
+            VpcId: !Ref 'VPC'
+            CidrBlock: '10.14.20.0/28'
+            Tags:
+            - Key: Name
+              Value: test-private-subnet1-vf
+        DeletionPolicy: Delete
+
+    LambdaRole:
+        Type: AWS::IAM::Role
+        Properties:
+            AssumeRolePolicyDocument:
+                Version: '2012-10-17'
+                Statement:
+                - Effect: "Allow"
+                  Principal:
+                    Service:
+                    - "lambda.amazonaws.com"
+                  Action: "sts:AssumeRole"
+            ManagedPolicyArns: 
+            - "arn:aws:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole"
+        DeletionPolicy: Delete
+
+    LambdaFunction:
+        Type: AWS::Lambda::Function
+        Properties:
+            FunctionName: HelloWorld
+            Description: Lambda Function displaying message
+            Code:
+                ZipFile: |
+                    def my_handler(event, context):
+                        message = 'Hello Lambda World!'
+                        return message
+
+            Handler: index.my_handler
+            Runtime: python3.8
+            Timeout: 300
+            Role: !GetAtt LambdaRole.Arn
+            VpcConfig: 
+                SecurityGroupIds:
+                    - { "Fn::GetAtt" : ["VPC", "DefaultSecurityGroup"] }
+                SubnetIds:
+                    - !Ref 'PrivateSubnetOne'
+            Environment: 
+                Variables:
+                    Logging: Debug
+        DeletionPolicy: Delete
+
+## These are the values output by the CloudFormation template
+#Outputs:
+#    VPCId:
+#        Description: The ID of the VPC that this stack is deployed in
+#        Value: !Ref 'VPC'
+#        Export:
+#            Name: 'VPCId'
+#    PublicSubnetOne:
+#        Description: Public subnet one
+#        Value: !Ref 'PublicSubnetOne'
+#        Export:
+#            Name: 'PublicSubnetOne'
+#    PrivateSubnetOne:
+#        Description: Private subnet one
+#        Value: !Ref 'PrivateSubnetOne'
+#        Export:
+#            Name: 'PrivateSubnetOne'

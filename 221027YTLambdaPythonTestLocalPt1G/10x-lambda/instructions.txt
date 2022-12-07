@@ -1,0 +1,58 @@
+# Creating a Sample Lambda function
+start watching form about 15mins https://www.youtube.com/watch?v=e0j0TQj330Q&t=1s
+0. Have docker open - also use gitshell for commands
+1. Create a Hello World Lambda Application in Pyhton
+2. Create a Dockerfile that will build our Lambda Application and execute it in local Docker environment.
+3. Create a sample shell script that can be used to trigger the Lambda function right in your terminal.
+4. Execute `sh ./docker-test.sh`
+5. Open new terminal and execute `curl -XPOST "http://localhost:9000/2015-03-31/f
+
+# 10x-lambda
+test aws lambda functions with python boto3 locally faster
+develop aws lambda functions in python and boto3 locally and 10x faster
+
+Wondering how to develop aws lambda  functions with python and boto3  locally and faster ? This video will walk you through simple hello world example on how you can develop and test lambda functions in python by not even toggling between aws console and your local desktop machine.
+The example demonstrates how an aws event triggers  lambda function and you can see all the events right in your code editor.
+
+test from YT
+
+________________________________________________________________________________________
+
+to see in Flowchart use gitbash / bash use commands:
+terraform plan -out=plan.out
+terraform show -json plan.out > plan.json
+then upload here: https://hieven.github.io/terraform-visual/
+
+https://github.com/hieven/terraform-visual
+
+----------------
+To create FLOWCHART using terraform:
+see https://developer.hashicorp.com/terraform/cli/commands/graph
+followed yt https://www.youtube.com/watch?v=JVFn1IgZLY0
+
+1. install graphviz as admin
+    choco install graphviz
+2. on command use: 
+terraform graph | dot -Tsvg > graph.svg
+terraform graph -type=plan-destroy | dot -Tsvg > graph1.svg
+
+
+TO LIST RESOURCES USING AWS CLI:
+aws resourcegroupstaggingapi get-resources --region=us-east-1 --tags-per-page 100
+aws resourcegroupstaggingapi get-resources --tags-per-page 100
+aws resourcegroupstaggingapi get-resources --tag-filters Key=Environment,Values=Production --tags-per-page 100
+aws resourcegroupstaggingapi get-resources --region eu-west-1 --output json
+
+use this to inspect - carefully -- aws resourcegroupstaggingapi get-resources --region eu-west-1 --output json
+
+To NUKE:
+steps taken in mini pc - personal
+in home/tradexy
+using ubuntu wsl2
+follow steps https://github.com/gruntwork-io/cloud-nuke
+after nuking all, everything is destroyed, log back into console using root account.
+prodivde admin access to previously created user account (i.e. tradexydev), provide console access and re-set password (note, can use previous password).
+On cli, will need to do:
+aws configure
+then create and provide new AWS Access Key and AWS Secret Key (and i.e. us-east-1 and json as per usual)
+p.s. Installation git cloned in this folder no needed as part of the steps - as just needed the 1 file.

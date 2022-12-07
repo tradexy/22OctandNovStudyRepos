@@ -1,0 +1,18 @@
+First use of AWS SDK for .NET App
+
+Set up using tutorial, aws docs and first part of this https://www.youtube.com/watch?v=Zl_lFuhSJGM
+
+In Visual Studio Open
+C:\Users\JohnMosquera\source\repos\aws-s3
+
+creates s3 buckets.
+Quick steps, run by pressing F5, then it will open a Swagger localhost page, use POST, Try it out, Choose File (i.e. anyfile.json) and excute.
+
+In S3 colsole, you should be able to see bucket with attached file.
+
+Followed tutorial up to 10:40 in https://www.youtube.com/watch?v=3sdTztvaxhg&t=74s
+
+later it goes to segregate buckets with / and delete buckets
+
+the tutorial also has a blog https://www.rahulpnath.com/blog/amazon-s3-dotnet/
+
